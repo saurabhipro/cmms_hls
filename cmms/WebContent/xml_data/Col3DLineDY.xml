@@ -1,0 +1,32 @@
+<graph caption='CPI' PYAxisName='No Of Pending CPI' SYAxisName='Unit No'
+ numberPrefix='$' showvalues='0'  numDivLines='4' formatNumberScale='0' decimalPrecision='0'
+anchorSides='10' anchorRadius='3' anchorBorderColor='009900'>
+<categories>
+<category name='March' />
+<category name='April' />
+<category name='May' />
+<category name='June' />
+<category name='July' />
+</categories>
+<dataset seriesName='NER' color='AFD8F8' showValues='0'>
+<set value='25' />
+<set value='2' />
+<set value='9' />
+<set value='10' />
+<set value='38' />
+</dataset>
+<dataset seriesName='SWR' color='F6BD0F' showValues='0' >
+<set value='5' /> 
+<set value='4' />
+<set value='47' />
+<set value='16' />
+<set value='1' />
+</dataset>
+<dataset seriesName='Revenue' color='8BBA00' showValues='0' parentYAxis='S' >
+<set value='45000' />
+<set value='44835' />
+<set value='42835' />
+<set value='77557' />
+<set value='92633' />
+</dataset>
+</graph>

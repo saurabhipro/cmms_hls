@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">password</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/wascpi_demo</property>
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+		<property name="connection.pool_size">1</property>
+		<property name="show_sql">false</property>
+		
+		<mapping class="com.iprosonic.cmms.modules.masters.user.domain.EmployeeBean" />
+		<mapping class="com.iprosonic.cmms.modules.job.transactions.job.domain.JobBean" />
+		<mapping class="com.iprosonic.cmms.modules.job.transactions.job.domain.JobWellBean" />
+		<mapping class="com.iprosonic.cmms.modules.job.transactions.job.domain.JobRigBean" />
+		<mapping class="com.iprosonic.cmms.modules.job.transactions.job.domain.JobRunBean" />
+		<mapping class="com.iprosonic.cmms.modules.job.transactions.job.domain.JobServiceBean" />
+		<mapping class="com.iprosonic.cmms.modules.job.transactions.job.domain.JobExplBean" />
+		<mapping class="com.iprosonic.cmms.modules.cpi.masters.assets.domain.AssetBean" />
+		<mapping class="com.iprosonic.cmms.modules.cpi.transactions.cpi.domain.CpiBean" />
+		<mapping class="com.iprosonic.cmms.pjcommons.model.NumberingBean" />
+		<mapping class="com.iprosonic.cmms.modules.cpi.masters.group.domain.CpiMasterBean" />
+		<mapping class="com.iprosonic.cmms.modules.cpi.masters.group.domain.CpiGroupBean" />
+		<mapping class="com.iprosonic.cmms.modules.job.transactions.job.domain.JobTypeBean" />
+		<mapping class="com.iprosonic.cmms.modules.job.masters.service.domain.ServiceMstBean" />
+		<mapping class="com.iprosonic.cmms.modules.masters.client.domain.ClientMasterBean" />
+		<mapping class="com.iprosonic.cmms.modules.masters.location.domain.Locationmst" />
+		
+		
+	</session-factory>
+</hibernate-configuration>

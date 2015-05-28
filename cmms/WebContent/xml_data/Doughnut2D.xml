@@ -1,0 +1,6 @@
+<graph showNames='1'  decimalPrecision='0'  >
+   <set name='OPEN' value='20'/>
+	<set name='CLOSED' value='7'  />
+    <set name='YELLOW OPEN' value='12' />
+    <set name='GREEN OPEN' value='11' />
+</graph>

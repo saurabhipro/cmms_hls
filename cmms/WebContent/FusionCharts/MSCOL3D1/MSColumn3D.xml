@@ -1,0 +1,33 @@
+<graph xaxisname='Engineer' yaxisname='Numbers' hovercapbg='DEDEBE' hovercapborder='889E6D' rotateNames='0' yAxisMaxValue='100' numdivlines='9' divLineColor='CCCCCC' divLineAlpha='80' decimalPrecision='0' showAlternateHGridColor='1' AlternateHGridAlpha='30' AlternateHGridColor='CCCCCC' caption='Single Engineer Report' subcaption='' >
+   <categories font='Arial' fontSize='11' fontColor='000000'>
+       <category name='HS' />
+     
+   </categories>
+   
+    <dataset seriesname='Services' color='56B9F9'>
+      <set value='90' />
+     
+   </dataset>
+    <dataset seriesname='Jobs' color='C9198D' >
+      <set value='27' />
+     
+   </dataset>
+     <dataset seriesname='ChMissRun' color='D64646' >
+      <set value='4' />
+     
+   </dataset>
+     <dataset seriesname='Services with LT' color='C9198D' >
+      <set value='10' />
+     
+   </dataset>
+   
+     <dataset seriesname='LT in Hrs' color='008E8E' >
+      <set value='4' />
+     
+   </dataset>
+   
+     <dataset seriesname='OT in Hrs' color='FF8E46' >
+      <set value='30' />
+     
+   </dataset>
+</graph>

@@ -1,0 +1,67 @@
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN"
+       "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+<validators>
+	<field name="employeeName">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>Employee Name is required.</message>
+		</field-validator>
+	</field>
+
+
+	<field name="password">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>Password is required.</message>
+		</field-validator>
+	</field>
+
+	<field name="employeeCd">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>employee Code is required.</message>
+		</field-validator>
+	</field>
+
+
+	<field name="departmentName">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>Department Name is required.</message>
+		</field-validator>
+	</field>
+
+	<field name="designation">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>Designation is required.</message>
+		</field-validator>
+	</field>
+
+	<field name="mobileNo">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>Mobile No is required.</message>
+		</field-validator>
+	</field>
+
+	<field name="emailId">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>EmailId is required.</message>
+		</field-validator>
+	</field>
+
+
+
+
+
+	<field name="locationCd">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>locationCd is required.</message>
+		</field-validator>
+	</field>
+
+
+</validators>

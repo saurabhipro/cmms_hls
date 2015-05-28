@@ -1,0 +1,20 @@
+<graph caption='OverAll Efficiency Of Engineers' xAxisName='engineers' yAxisName='OE in %' decimalPrecision='0' formatNumberScale='0' rotateNames="1">
+
+  <set name='RM' value='100' color='008E8E'/>
+   <set name='AD' value='95' color='F6BD0F' />
+   <set name='MDP' value='80' color='008E8E'/>
+   <set name='HS' value='38' color='FF8E46'/>
+   <set name='JAK' value='90' color='008E8E'/>
+   <set name='VBK' value='90' color='D64646'/>
+   <set name='BSS' value='89' color='008E8E'/>
+   <set name='GCL' value='76' color='588526'/>
+   <set name='RVK' value='100' color='008E8E'/>
+   <set name='TC' value='100' color='008ED6'/>
+   <set name='LN' value='100' color='008E8E'/>
+   <set name='SCR' value='95' color='A186BE'/>
+   <set name='BSS' value='96' color='008E8E'/>
+   <set name='VJG' value='100' color='008ED6'/>
+   <set name='RJM' value='80' color='008E8E'/>
+   <set name='KS' value='90' color='F6BD0F'/>
+</graph>
+	

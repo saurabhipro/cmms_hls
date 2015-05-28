@@ -1,0 +1,36 @@
+.header {
+	background-color:red;
+}
+
+
+.rig {
+	background-color:#1FBED6;
+	width: 10%;
+}
+
+.run {
+	background-color:#97C30A;
+	width: 10%;
+}
+
+.ser {
+	background-color:#f5c8b4;
+	width: 1000px;
+}
+
+.serFsqc {
+	background-color:#C0BCB6;
+	width: 1000px;
+}
+
+.expl {
+	background-color:#A3AE7E;
+}
+
+
+.hideFsqc
+{
+	width:0px;
+	height: 0px;
+	
+}

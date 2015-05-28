@@ -1,0 +1,20 @@
+<graph caption='Services with lost times by engineers' xAxisName='engineers' yAxisName='LT Services' decimalPrecision='0' formatNumberScale='1' rotateNames="1">
+
+ <set name='RM' value='17' color='008E8E'/>
+   <set name='AD' value='190' color='F6BD0F' />
+   <set name='MDP' value='80' color='008E8E'/>
+   <set name='HS' value='380' color='FF8E46'/>
+   <set name='JAK' value='29' color='008E8E'/>
+   <set name='VBK' value='260' color='D64646'/>
+   <set name='BSS' value='180' color='008E8E'/>
+   <set name='GCL' value='70' color='588526'/>
+   <set name='RVK' value='380' color='008E8E'/>
+   <set name='TC' value='190' color='008ED6'/>
+   <set name='LN' value='290' color='008E8E'/>
+   <set name='SCR' value='380' color='A186BE'/>
+   <set name='BSS' value='380' color='008E8E'/>
+   <set name='VJG' value='190' color='008ED6'/>
+   <set name='RJM' value='290' color='008E8E'/>
+   <set name='KS' value='380' color='F6BD0F'/>
+</graph>
+	

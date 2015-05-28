@@ -1,0 +1,26 @@
+UPDATE jobrun SET wt='0' WHERE wt REGEXP '^-?[a-z]+$';
+
+UPDATE jobservice SET chruns='0' WHERE chruns='NA';
+UPDATE jobservice SET chmisRuns='0' WHERE chmisRuns='NA';
+UPDATE jobservice SET deepestDepth='0' WHERE deepestDepth='NA';
+UPDATE jobservice SET deepestDepth='0' WHERE deepestDepth REGEXP '^-?[a-z]+$';
+UPDATE jobservice SET deepestDepth='0' WHERE deepestDepth='';
+UPDATE jobservice SET lossTime='0' WHERE lossTime='NA';
+UPDATE jobservice SET lossTime='0' WHERE lossTime='';
+UPDATE jobservice SET lossTime='0' WHERE lossTime=' TTP';
+UPDATE jobservice SET logRcieveAtHo='0' WHERE logRcieveAtHo='-Select-';
+UPDATE jobservice SET lqaTechnical='0' WHERE lqaTechnical='-Select-';
+UPDATE jobservice SET meterageLogged='0' WHERE meterageLogged='NA';
+UPDATE jobservice SET meteragePerforated='0' WHERE meteragePerforated='NA';
+UPDATE jobservice SET rev='0' WHERE rev='NA';
+UPDATE jobservice SET engi='NULL' WHERE engi='NA';
+UPDATE jobservice SET lqaPresentation='0' WHERE lqaPresentation='-Select-';
+UPDATE jobservice SET meterageLogged='0' WHERE meterageLogged='';
+UPDATE jobservice SET meteragePerforated='0' WHERE meteragePerforated='';
+UPDATE jobservice SET meteragePerforated='0' WHERE meteragePerforated='na';
+UPDATE jobservice SET rev='0' WHERE rev='';
+
+UPDATE jobrig SET rigDownEnd='0' WHERE rigDownEnd='NA';
+UPDATE jobrig SET rigDownStart='0' WHERE rigDownStart='NA';
+UPDATE jobrig SET rigUpEnd='0' WHERE rigUpEnd='NA';
+UPDATE jobrig SET rigUpStart='0' WHERE rigUpStart='NA';

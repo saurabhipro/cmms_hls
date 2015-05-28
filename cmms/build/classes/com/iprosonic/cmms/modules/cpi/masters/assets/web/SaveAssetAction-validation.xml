@@ -1,0 +1,56 @@
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN"
+       "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+<validators>
+	<field name="regionCd">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<param name="min">3</param>
+			<param name="max">100</param>
+			<message>Problem  is required.</message>
+		</field-validator>
+	</field>
+	<field name="assetCd">
+		<field-validator type="requiredstring">
+		<param name="trim">true</param>
+			<param name="min">3</param>
+			<param name="max">100</param>
+			<message>assetcode is required.</message>
+		</field-validator>
+	</field>
+	
+	
+	<field name="assetSerialNo">
+		<field-validator type="requiredstring">
+		<param name="trim">true</param>
+			<param name="min">3</param>
+			<param name="max">100</param>
+			<message>assetSerialNo is required.</message>
+		</field-validator>
+	</field>
+	
+	<field name="sectionSerialNo">
+		<field-validator type="requiredstring">
+		<param name="trim">true</param>
+			<param name="min">3</param>
+			<param name="max">100</param>
+			<message>sectionSerialNo is required.</message>
+		</field-validator>
+	</field>
+	
+	<field name="pmSchedule">
+		<field-validator type="requiredstring">
+		<param name="trim">true</param>
+			<param name="min">3</param>
+			<param name="max">100</param>
+			<message>pmSchedule is required.</message>
+		</field-validator>
+	</field>
+	<field name="pmScheduleUnit">
+		<field-validator type="requiredstring">
+		<param name="trim">true</param>
+			<param name="min">3</param>
+			<param name="max">100</param>
+			<message>pmSchedule is required.</message>
+		</field-validator>
+	</field>	
+</validators>

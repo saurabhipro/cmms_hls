@@ -1,0 +1,539 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.ui.theme" value="qxhtml" />
+	<constant name="struts.ui.templateDir" value="template" />
+	<!-- <constant name="struts.devMode" value="true" /> -->
+	<package name="default1" extends="struts-default" namespace="/">
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+
+
+		<action name="GetLocationNameAction"
+			class="com.iprosonic.cmms.pjcommons.action.GetLocationNameAction">
+		</action>
+		<!-- ========================= Login Action ================================= -->
+		<action name="LoginAction" class="com.iprosonic.cmms.modules.login.web.LoginAction">
+			<result name="input">/WEB-INF/com/iprosonic/cmms/modules/login/jsp/login.jsp
+			</result>
+			<result name="error" type="tiles">loginerror</result>
+			<result name="success" type="tiles">welcome</result>
+		</action>
+
+
+		<action name="LogOutAction"
+			class="com.iprosonic.cmms.modules.login.web.LogOutAction">
+			<result name="success">/WEB-INF/com/iprosonic/cmms/modules/login/jsp/login.jsp
+			</result>
+		</action>
+	</package>
+
+	<package name="default" extends="struts-default">
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<interceptors>
+
+
+			<interceptor name="SessionCheckInterceptor"
+				class="com.iprosonic.cmms.pjcommons.utility.SessionCheckInterceptor">
+			</interceptor>
+
+			<!-- <interceptors> <interceptor name="sessionInterceptor" class="com.platform.web.security.SessionInterceptor" 
+				/> </interceptors> -->
+
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="SessionCheckInterceptor" />
+			</interceptor-stack>
+		</interceptors>
+
+
+		<default-interceptor-ref name="myStack">
+		</default-interceptor-ref>
+
+		<global-results>
+			<result name="sessionExpired" type="redirectAction">LoginAction
+			</result>
+		</global-results>
+
+		<action name="InitEmployeeMstAction"
+			class="com.iprosonic.cmms.modules.masters.user.web.InitEmployeeMstAction">
+			<result name="success" type="tiles">usermst</result>
+			<result name="input" type="tiles">usermst</result>
+		</action>
+		<!-- client action -->
+
+		<action name="InitClientMstAction"
+			class="com.iprosonic.cmms.modules.masters.client.web.InitClientMstAction">
+			<result name="success" type="tiles">addclient</result>
+		</action>
+		<action name="SaveClientMstAction"
+			class="com.iprosonic.cmms.modules.masters.client.web.SaveClientMstAction">
+			<result type="redirect">/InitClientMstAction</result>
+		</action>
+
+
+		<action name="DeleteClientMst"
+			class="com.iprosonic.cmms.modules.masters.client.web.DeleteClientMstAction">
+			<result name="success" type="tiles">addclient</result>
+		</action>
+		<action name="EditClientMst"
+			class="com.iprosonic.cmms.modules.masters.client.web.EditClientMstAction">
+			<result name="success" type="tiles">addclient</result>
+
+		</action>
+
+		<!-- location master -->
+		<action name="InitLocationMstAction"
+			class="com.iprosonic.cmms.modules.masters.location.web.InitLocationMstAction">
+			<result name="success" type="tiles">addlocation</result>
+		</action>
+
+
+		<action name="EngWiseConsolidateServiceReport"
+			class="com.iprosonic.cmms.modules.job.reports.was.web.EngWiseConsolidateServiceReport">
+			<result name="input" type="tiles">operationreport</result>
+		</action>
+
+		<action name="CrewWiseConsolidateServiceReport"
+			class="com.iprosonic.cmms.modules.job.reports.was.web.CrewWiseConsolidateServiceReport">
+			<result name="input" type="tiles">crewreport</result>
+		</action>
+
+		<action name="UpdateEngUtil"
+			class="com.iprosonic.cmms.pjcommons.utility.UpdateEngInServiceUtils">
+
+		</action>
+
+		<action name="ReportEngWise"
+			class="com.iprosonic.cmms.modules.job.reports.was.web.ServiceReportEngineerWise">
+			<result name="input" type="tiles">operationreportengwise</result>
+		</action>
+
+		<action name="ReportCrewWise"
+			class="com.iprosonic.cmms.modules.job.reports.was.web.ServiceReportCrewWise">
+			<result name="input" type="tiles">operationreportcrewwise</result>
+		</action>
+
+
+		<!-- made by arpit... -->
+		<action name="ServiceExpReport"
+			class="com.iprosonic.cmms.modules.job.reports.was.web.ServiceExplosiveReport">
+			<result name="input" type="tiles">serviceExpReprot</result>
+		</action>
+
+
+		<action name="SaveLocationMstAction"
+			class="com.iprosonic.cmms.modules.masters.location.web.SaveLocationMstAction">
+			<result type="redirect">/InitLocationMstAction</result>
+		</action>
+
+		<action name="EditLocationMst"
+			class="com.iprosonic.cmms.modules.masters.location.web.EditLocationMstAction">
+			<result name="success" type="tiles">addlocation</result>
+		</action>
+
+		<action name="DeleteLocationMst"
+			class="com.iprosonic.cmms.modules.masters.location.web.DeleteLocationMstAction">
+			<result name="success" type="tiles">addlocation</result>
+		</action>
+
+
+		<action name="SaveEmployeeAction"
+			class="com.iprosonic.cmms.modules.masters.user.web.SaveEmployeeAction">
+			<result name="input" type="tiles">usermst</result>
+			<result name="success" type="chain">SuccessAction</result>
+		</action>
+
+		<action name="UpdateEmployeeAction"
+			class="com.iprosonic.cmms.modules.masters.user.web.UpdateEmployeeAction">
+			<result name="input" type="tiles">usermst</result>
+			<result name="success" type="chain">SuccessAction</result>
+		</action>
+
+
+		<action name="ListEmployeeAction"
+			class="com.iprosonic.cmms.modules.masters.user.web.ListEmployeeAction">
+			<result name="success" type="tiles">usermst</result>
+		</action>
+
+		<action name="InitSearchEmployeeAction"
+			class="com.iprosonic.cmms.modules.masters.user.web.InitSearchEmployeeAction">
+			<result name="success" type="tiles">searchusermst</result>
+		</action>
+
+		<action name="SearchEmployeeAction"
+			class="com.iprosonic.cmms.modules.masters.user.web.SearchEmployeeAction">
+			<result name="input" type="tiles">searchusermst</result>
+			<result name="success" type="tiles">searchusermst</result>
+		</action>
+
+
+		<action name="EditEmployeeAction"
+			class="com.iprosonic.cmms.modules.masters.user.web.EditEmployeeAction">
+			<result name="success" type="tiles">editusermst</result>
+		</action>
+
+		<action name="DeleteEmployeeAction"
+			class="com.iprosonic.cmms.modules.masters.user.web.DeleteEmployeeAction">
+			<result name="success" type="chain">SuccessAction</result>
+		</action>
+
+
+		<action name="Dashboard">
+			<result type="tiles">dashboardMaster</result>
+		</action>
+
+		<action name="FusionJobAction"
+			class="com.iprosonic.cmms.pjcommons.action.FusionChartsAction"
+			method="execute">
+		</action>
+
+
+		<action name="InitCPIAction"
+			class="com.iprosonic.cmms.modules.cpi.transactions.cpi.web.InitCpiAction">
+			<result name="success" type="tiles">cpi</result>
+			<result name="input" type="tiles">cpi</result>
+		</action>
+
+		<action name="locationCdAction"
+			class="com.iprosonic.cmms.modules.cpi.transactions.cpi.web.InitCpiAction">
+			<result name="input" type="tiles">cpi</result>
+			<result name="success" type="tiles">cpi</result>
+		</action>
+
+
+		<action name="GetListAction"
+			class="com.iprosonic.cmms.modules.cpi.transactions.cpi.web.GetListAction">
+		</action>
+
+		<action name="SaveCPIAction"
+			class="com.iprosonic.cmms.modules.cpi.transactions.cpi.web.SaveCPIAction">
+			<result name="input" type="tiles">SaveCPIAction</result>
+			<result name="success" type="tiles">successCpi</result>
+		</action>
+
+		<action name="InitSearchCPIAction"
+			class="com.iprosonic.cmms.modules.cpi.transactions.cpi.web.InitSearchCPIAction">
+			<result name="success" type="tiles">InitSearchCPIActionSuccess
+			</result>
+		</action>
+
+		<action name="SearchCpiAction"
+			class="com.iprosonic.cmms.modules.cpi.transactions.cpi.web.SearchCpiAction">
+			<result name="input" type="tiles">InitSearchCPIActionSuccess</result>
+			<result name="success" type="tiles">InitSearchCPIActionSuccess
+			</result>
+		</action>
+
+		<action name="EditCpiAction"
+			class="com.iprosonic.cmms.modules.cpi.transactions.cpi.web.EditCPIAction">
+			<result name="success" type="tiles">EditCpi</result>
+		</action>
+
+
+		<action name="UpdateCpiAction"
+			class="com.iprosonic.cmms.modules.cpi.transactions.cpi.web.UpdateCpiAction">
+			<result name="input" type="tiles">InitSearchCPIActionSuccess</result>
+			<result name="success" type="tiles">UpdateCpiAction</result>
+		</action>
+
+		<!-- ========================= Report Action ================================= -->
+
+		<action name="InitMWasReportAction"
+			class="com.iprosonic.cmms.modules.job.reports.was.web.InitMWasReportAction">
+			<result name="success" type="tiles">InitMWasReportAction</result>
+		</action>
+
+		<action name="InitHistoryCardReportAction"
+			class="com.iprosonic.cmms.modules.job.reports.was.web.InitMWasReportAction">
+			<result name="success" type="tiles">InitHistoryCardReportAction
+			</result>
+		</action>
+
+
+		<action name="MWasReportAction"
+			class="com.iprosonic.cmms.modules.job.reports.was.web.MWasReportAction">
+			<result name="input" type="tiles">InitMWasReportAction</result>
+			<result name="success" type="tiles">InitMWasReportAction</result>
+		</action>
+
+		<action name="HistoryCardReportAction"
+			class="com.iprosonic.cmms.modules.cpi.reports.historycard.web.HistoryCardReportAction">
+			<result name="input" type="tiles">InitHistoryCardReportAction</result>
+			<result name="success">InitHistoryCardReportAction</result>
+		</action>
+
+
+		<!-- ========================= Asset Master ================================= -->
+		<action name="InitAssetAction"
+			class="com.iprosonic.cmms.modules.cpi.masters.assets.web.InitAssetAction">
+			<result name="success" type="tiles">InitAssetAction</result>
+		</action>
+
+		<action name="SaveAssetAction"
+			class="com.iprosonic.cmms.modules.cpi.masters.assets.web.SaveAssetAction">
+			<result name="input" type="tiles">InitAssetAction</result>
+			<result name="success" type="tiles">SaveAssetAction</result>
+		</action>
+
+		<action name="InitSearchAssetAction"
+			class="com.iprosonic.cmms.modules.cpi.masters.assets.web.InitSearchAssetAction">
+			<result name="success" type="tiles">InitSearchAssetAction</result>
+		</action>
+
+		<action name="SearchAssetAction"
+			class="com.iprosonic.cmms.modules.cpi.masters.assets.web.SearchAssetAction">
+			<result name="success" type="tiles">InitSearchAssetAction</result>
+			<result name="success" type="tiles">InitSearchAssetAction</result>
+		</action>
+
+
+
+		<action name="EditAssetAction"
+			class="com.iprosonic.cmms.modules.cpi.masters.assets.web.EditAssetAction">
+			<result name="success" type="tiles">InitSearchAssetAction</result>
+			<result name="success" type="tiles">EditAssetAction</result>
+		</action>
+
+
+		<action name="UpdateAssetAction"
+			class="com.iprosonic.cmms.modules.cpi.masters.assets.web.UpdateAssetAction">
+			<result name="success" type="tiles">EditAssetAction</result>
+			<result name="success" type="tiles">UpdateAssetAction</result>
+		</action>
+
+
+		<!-- ========================= Print Cpi ================================= -->
+		<action name="InitPrintCpiAction"
+			class="com.iprosonic.cmms.modules.cpi.transactions.cpi.web.InitPrintCpiAction">
+			<result name="success" type="tiles">InitPrintCpiAction
+			</result>
+		</action>
+		<action name="PrintCpiAction"
+			class="com.iprosonic.cmms.modules.cpi.transactions.cpi.web.PrintCpiAction">
+			<result name="input" type="tiles">InitPrintCpiAction</result>
+			<result name="success" type="tiles">InitPrintCpiAction</result>
+		</action>
+
+		<action name="GenerateExcel"
+			class="com.iprosonic.cmms.pjcommons.action.GenerateExcel">
+			<result name="input" type="tiles">InitPrintCpiAction</result>
+		</action>
+
+
+
+
+		<!-- ========================= Common Action ================================= -->
+		<action name="SuccessAction"
+			class="com.iprosonic.cmms.pjcommons.action.SuccessAction">
+			<result name="success" type="tiles">success</result>
+
+		</action>
+
+		<action name="ErrorAction" class="com.iprosonic.cmms.pjcommons.action.ErrorAction">
+			<result name="success" type="tiles">error</result>
+		</action>
+
+		<action name="DownloadExcelAction" method="downloadExcel"
+			class="com.iprosonic.cmms.pjcommons.action.DownloadExcelAction">
+			<result name="error" type="chain">ErrorAction</result>
+		</action>
+		
+		<action name="DownloadAllJob" method="downloadAllJob"
+			class="com.iprosonic.cmms.pjcommons.action.DownloadExcelAction">
+			<result name="error" type="chain">ErrorAction</result>
+		</action>
+		<!-- ========================= DeshBoard Action ================================= -->
+		<action name="DashboardSearch"
+			class="com.iprosonic.cmms.modules.dashboard.web.DashboardSearch">
+			<result name="success" type="tiles">deshboardresult</result>
+		</action>
+
+
+
+		<!-- ========================= Job Action ================================= -->
+		<action name="InitCreateJobAction"
+			class="com.iprosonic.cmms.modules.job.transactions.job.web.InitCreateJobAction">
+			<result name="success">WEB-INF/com/iprosonic/cmms/modules/job/transactions/jsp/createJob.jsp
+			</result>
+		</action>
+
+		<action name="SaveJobAction"
+			class="com.iprosonic.cmms.modules.job.transactions.job.web.SaveJobAction">
+			<result name="input">WEB-INF/com/iprosonic/cmms/modules/job/transactions/jsp/createJob.jsp
+			</result>
+			<result name="success" type="redirect">InitSearchJobAction</result>
+
+			<result name="error" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="Error.txt"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+		<action name="UpdateJobAction"
+			class="com.iprosonic.cmms.modules.job.transactions.job.web.UpdateJobAction">
+			<result name="success" type="redirect">SearchJobAction</result>
+			<result name="error" type="chain">ErrorAction</result>
+		</action>
+
+
+		<action name="EditJob"
+			class="com.iprosonic.cmms.modules.job.transactions.job.web.UpdateJobWellAction"
+			method="updateJob">
+			<result name="success" type="redirect">SearchJobAction</result>
+			<result name="error" type="chain">ErrorAction</result>
+		</action>
+
+		<action name="EditWell"
+			class="com.iprosonic.cmms.modules.job.transactions.job.web.UpdateJobWellAction"
+			method="updateWell">
+			<result name="success" type="redirect">SearchJobAction</result>
+			<result name="error" type="chain">ErrorAction</result>
+		</action>
+
+		<action name="InitSearchJobAction"
+			class="com.iprosonic.cmms.modules.job.transactions.job.web.InitSearchJobAction">
+			<result name="success" type="tiles">searchJob</result>
+		</action>
+
+		<action name="SearchJobAction"
+			class="com.iprosonic.cmms.modules.job.transactions.job.web.SearchJobAction">
+			<result name="success" type="tiles">searchJob</result>
+		</action>
+
+		<action name="EditJobAction"
+			class="com.iprosonic.cmms.modules.job.transactions.job.web.EditJobAction">
+			<result name="success" type="tiles">editJob</result>
+		</action>
+		<action name="DeleteJob"
+			class="com.iprosonic.cmms.modules.job.transactions.job.web.DeleteJob">
+			<result name="success" type="tiles">deleteJobSuccess</result>
+		</action>
+
+
+		<action name="UpdateRigJobAction"
+			class="com.iprosonic.cmms.modules.job.transactions.job.web.UpdateJobRigAction">
+
+		</action>
+
+		<action name="UpdateRunJobAction"
+			class="com.iprosonic.cmms.modules.job.transactions.job.web.UpdateJobRunAction">
+		</action>
+
+
+		<action name="UpdateJobServiceAction"
+			class="com.iprosonic.cmms.modules.job.transactions.job.web.UpdateJobServiceAction">
+
+		</action>
+
+		<action name="InsertJobServiceAction"
+			class="com.iprosonic.cmms.modules.job.transactions.job.web.InsertJobServiceAction">
+		</action>
+		<action name="InsertServiceExplAction"
+			class="com.iprosonic.cmms.modules.job.transactions.job.web.InsertServiceExplAction">
+		</action>
+
+		<action name="UpdateJobExplosiveAction"
+			class="com.iprosonic.cmms.modules.job.transactions.job.web.UpdateJobExplosiveAction">
+
+		</action>
+
+
+		<action name="UpdateJobWorkFlowAction"
+			class="com.iprosonic.cmms.modules.job.transactions.job.web.UpdateJobWorkFlowAction">
+			<result name="success" type="chain">SuccessAction</result>
+			<result name="error" type="chain">ErrorAction</result>
+		</action>
+
+
+
+		<!-- =================== SERVICE Master ========================================== -->
+
+		<action name="InitServieMasterAction"
+			class="com.iprosonic.cmms.modules.job.masters.service.web.InitServieMasterAction">
+			<result name="success" type="tiles">serviceMaster</result>
+
+		</action>
+
+		<action name="SaveServiceMasterAction"
+			class="com.iprosonic.cmms.modules.job.masters.service.web.SaveServiceMasterAction">
+			<result name="input" type="tiles">serviceMaster</result>
+			<result name="success" type="chain">SuccessAction</result>
+		</action>
+
+
+
+		<action name="UpdateServiveMasterAction"
+			class="com.iprosonic.cmms.modules.job.masters.service.web.UpdateServiveMasterAction">
+			<result name="input" type="tiles">editServiceMaster</result>
+			<result name="success" type="chain">SuccessAction</result>
+		</action>
+
+		<action name="InitSearchServiceMasterAction"
+			class="com.iprosonic.cmms.modules.job.masters.service.web.InitSearchServiceMasterAction">
+			<result name="success" type="tiles">searchServiceMaster</result>
+		</action>
+		<action name="SearchServiceMasterAction"
+			class="com.iprosonic.cmms.modules.job.masters.service.web.SearchServiceMasterAction">
+			<result name="input" type="tiles">serachServiceMaster</result>
+			<result name="success" type="tiles">searchServiceMaster</result>
+		</action>
+
+		<action name="EditServiceAction"
+			class="com.iprosonic.cmms.modules.job.masters.service.web.EditServiceAction">
+			<result name="success" type="tiles">editServiceMaster</result>
+		</action>
+		<action name="GoBackAction" class="com.iprosonic.cmms.pjcommons.action.GoBackAction">
+		</action>
+		<!-- =================== Job report ========================================== -->
+
+		<action name="InitJobBonusReportAction"
+			class="com.iprosonic.cmms.modules.job.reports.jobbonus.web.InitJobBonusReportAction">
+			<result name="success" type="tiles">jobbonusreport</result>
+		</action>
+		<action name="JobBonusReportAction"
+			class="com.iprosonic.cmms.modules.job.reports.jobbonus.web.JobBonusReportAction">
+			<result name="input" type="tiles">jobbonusreport</result>
+			<result name="success" type="tiles">jobbonusreport</result>
+		</action>
+
+		<!-- =================== PopUpAction ========================================== -->
+		
+		<action name="PopUpAction"
+			class="com.iprosonic.cmms.modules.job.transactions.job.web.PopUpAction">
+			<result name="rig">/WEB-INF/com/iprosonic/cmms/modules/job/transactions/jsp/editRig.jsp
+			</result>
+			<result name="run">/WEB-INF/com/iprosonic/cmms/modules/job/transactions/jsp/editRun.jsp
+			</result>
+			<result name="ser">/WEB-INF/com/iprosonic/cmms/modules/job/transactions/jsp/editService.jsp
+			</result>
+			<result name="exp">/WEB-INF/com/iprosonic/cmms/modules/job/transactions/jsp/editExpl.jsp
+			</result>
+			<result name="crew">/WEB-INF/com/iprosonic/cmms/modules/job/transactions/jsp/crewPopUp.jsp
+			</result>
+			<result name="emp">/WEB-INF/com/iprosonic/cmms/modules/job/transactions/jsp/employeePopUp.jsp
+			</result>
+			<result name="insSer">/WEB-INF/com/iprosonic/cmms/modules/job/transactions/jsp/insertService.jsp
+			</result>
+			<result name="insExp">/WEB-INF/com/iprosonic/cmms/modules/job/transactions/jsp/insertExp.jsp
+			</result>
+			<result name="latlongangle">/WEB-INF/com/iprosonic/cmms/modules/job/transactions/jsp/latlongangle.jsp
+			</result>
+
+		</action>
+		
+		<action name="DeleteJobAction"
+			class="com.iprosonic.cmms.modules.job.transactions.job.web.DeleteJobAction">
+
+		</action>
+
+
+	</package>
+</struts>

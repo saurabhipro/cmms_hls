@@ -1,0 +1,14 @@
+<graph caption='pending MRF Summary' subcaption='For the year 2013' xAxisName='Month' yAxisMinValue='15000' yAxisName='Quantity' decimalPrecision='0' formatNumberScale='0' numberPrefix='' showNames='1' showValues='0'  showAlternateHGridColor='1' AlternateHGridColor='ff5904' divLineColor='ff5904' divLineAlpha='20' alternateHGridAlpha='5' >
+   <set name='Jan' value='30400' hoverText='January'/>
+   <set name='Feb' value='21800' hoverText='February'/>
+   <set name='Mar' value='25800' hoverText='March'/>
+   <set name='Apr' value='23800' hoverText='April'/>
+   <set name='May' value='29600' hoverText='May'/>
+   <set name='Jun' value='27600' hoverText='June'/>
+   <set name='Jul' value='23800' hoverText='July'/>
+   <set name='Aug' value='30700' hoverText='August'/>
+   <set name='Sep' value='34800' hoverText='September'/>
+   <set name='Oct' value='21900' hoverText='October'/>
+   <set name='Nov' value='32900' hoverText='November' />
+   <set name='Dec' value='19800' hoverText='December' />
+</graph>

@@ -1,0 +1,82 @@
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN"
+       "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+<validators>
+
+	<field name="regionCd">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<param name="min">3</param>
+			<param name="max">100</param>
+			<message>Region code is required.</message>
+		</field-validator>
+	</field>
+
+
+	<field name="problem">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<param name="min">3</param>
+			<param name="max">100</param>
+			<message>Problem is required.</message>
+		</field-validator>
+	</field>
+
+
+
+	<field name="regionCd">
+		<field-validator type="fieldexpression">
+			<param name="expression">!regionCd.equals('-Select-')</param>
+			<message>Region Code is required.</message>
+		</field-validator>
+	</field>
+
+	<field name="locationCd">
+		<field-validator type="fieldexpression">
+			<param name="expression">!locationCd.equals('-Select-')</param>
+			<message>Location Code is required.</message>
+		</field-validator>
+	</field>
+
+	<field name="unitCd">
+		<field-validator type="fieldexpression">
+			<param name="expression">!unitCd.equals('-Select-')</param>
+			<message>Unit Code is required.</message>
+		</field-validator>
+	</field>
+	
+	<field name="clientCd">
+		<field-validator type="fieldexpression">
+			<param name="expression">!clientCd.equals('-Select-')</param>
+			<message>Client Code is required.</message>
+		</field-validator>
+	</field>
+	
+	<field name="priority">
+		<field-validator type="fieldexpression">
+			<param name="expression">!priority.equals('-Select-')</param>
+			<message>Priority Code is required.</message>
+		</field-validator>
+	</field>
+	
+	<field name="cpiType">
+		<field-validator type="fieldexpression">
+			<param name="expression">!cpiType.equals('-Select-')</param>
+			<message>CPI Type is required.</message>
+		</field-validator>
+	</field>
+	
+	<field name="maintanenceType">
+		<field-validator type="fieldexpression">
+			<param name="expression">!maintanenceType.equals('-Select-')</param>
+			<message>Maintanence Type is required.</message>
+		</field-validator>
+	</field>
+	
+	<field name="sectionSerialNo1">
+		<field-validator type="fieldexpression">
+			<param name="expression">!sectionSerialNo1.equals('-Select-')</param>
+			<message>Section Serial No. 1  is required.</message>
+		</field-validator>
+	</field>
+	
+</validators>

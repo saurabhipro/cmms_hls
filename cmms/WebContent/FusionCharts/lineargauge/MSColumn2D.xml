@@ -1,0 +1,29 @@
+<graph xaxisname='Location' yaxisname='Value' hovercapbg='DEDEBE' hovercapborder='889E6D' rotateNames='0' yAxisMaxValue='100' numdivlines='9' divLineColor='CCCCCC' divLineAlpha='80' decimalPrecision='0' showAlternateHGridColor='1' AlternateHGridAlpha='30' AlternateHGridColor='CCCCCC' caption='Values In Status' subcaption='' >
+   <categories font='Arial' fontSize='11' fontColor='000000'>
+      <category name='ASP001OH' />
+      
+   </categories>
+   <dataset seriesname='CLOSED' color='FDC12E'>
+      <set value='30' />
+    
+   </dataset>
+    <dataset seriesname='PARTIALLY_DELIVERED' color='56B9F9'>
+      <set value='67' />
+     </dataset>
+    <dataset seriesname='PENDING_WITH_HO' color='C9198D'>
+      <set value='25' />
+    
+   </dataset>
+    <dataset seriesname='REJECTED' color='AFD8F8'>
+      <set value='87' />
+   
+   </dataset>
+    <dataset seriesname='PENDING_WITH_EIC' color='008E8E'>
+      <set value='97' />
+   
+   </dataset>
+    <dataset seriesname='PENDING_WITH_RH' color='D64646'>
+      <set value='27' />
+   
+   </dataset>
+</graph>

@@ -1,0 +1,63 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>CREATE JOB</title>
+<link rel="stylesheet" type="text/css" href="css/table.css" />
+<link rel="stylesheet" type="text/css" href="css/button.css" />
+<script type="text/javascript" language="javascript" src="js/grid.js"></script>
+</head>
+
+<div style="overflow: auto; height: 600px">
+	Please Enter
+	<form id="entityForm">
+		<table align="center" style="border: 1px solid black;" width="90%">
+			<tr>
+				<td>
+					<div class="CSSTableGenerator" style="width: auto; height: auto;">
+						Manage Entity</div>
+				</td>
+			</tr>
+			<tr style="background-color: lightgrey; height: 50px">
+				<td colspan="6" align="center"><input type="button"
+					class="button" id="rig" value="Add Entity"
+					onclick="addEntityItem(this,'Class','datatable')" /> <input
+					class="button" type="button" id="delete" value="Delete"
+					onclick="deleteEntity('datatable')" /></td>
+			</tr>
+			<tr>
+				<td colspan="8">
+					<div class="CSSTableGenerator" style="width: auto; height: auto;">
+						<table id="datatable"
+							style="border: 0px solid black; overflow: scroll"></table>
+					</div></td>
+			</tr>
+
+			<tr style="background-color: lightgrey; height: 50px">
+				<td colspan="6" align="center"></td>
+			</tr>
+			<tr>
+				<td><input type="text" id="entityRowCount" style="width: 70px;" />
+				</td>
+			</tr>
+
+		</table>
+	</form>
+</div>
+
+
+
+<table align="center" style="border: 1px ;" width="90%">
+	<tr>
+		<td>
+			<div class="CSSTableGenerator" style="height: 50px">
+						<input type="button" class="button" value="Save" onclick="generateSubmitURL()">
+			</div></td>
+
+	</tr>
+</table>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="baseLayout"
+		template="/WEB-INF/com/iprosonic/cmms/pjcommons/layout/defaultLayout.jsp">
+		<put-attribute name="title" value="cmms" />
+		<put-attribute name="header"
+			value="/WEB-INF/com/iprosonic/cmms/pjcommons/jsp/header.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/pjcommons/jsp/body.jsp" />
+		<put-attribute name="footer"
+			value="/WEB-INF/com/iprosonic/cmms/pjcommons/jsp/footer.jsp" />
+	</definition>
+
+
+	<definition name="loginErrorLayout"
+		template="/WEB-INF/com/iprosonic/cmms/pjcommons/layout/defaultLayout.jsp">
+		<put-attribute name="title" value="cmms" />
+		<put-attribute name="header"
+			value="/WEB-INF/com/iprosonic/cmms/pjcommons/jsp/header.jsp" />
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/pjcommons/jsp/body.jsp" />
+		<put-attribute name="footer"
+			value="/WEB-INF/com/iprosonic/cmms/pjcommons/jsp/footer.jsp" />
+	</definition>
+
+	<definition name="login" extends="baseLayout">
+		<put-attribute name="title" value="cmms" />
+		<put-attribute name="header"
+			value="/WEB-INF/com/iprosonic/cmms/pjcommons/jsp/header.jsp" />
+		<put-attribute name="menu"
+			value="/WEB-INF/com/iprosonic/cmms/pjcommons/jsp/menu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/pjcommons/jsp/body.jsp" />
+		<put-attribute name="footer"
+			value="/WEB-INF/com/iprosonic/cmms/pjcommons/jsp/footer.jsp" />
+	</definition>
+
+	<definition name="success" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/pjcommons/jsp/success.jsp" />
+	</definition>
+	<definition name="error" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/pjcommons/jsp/error.jsp" />
+	</definition>
+
+
+
+	<definition name="welcome"
+		template="/WEB-INF/com/iprosonic/cmms/pjcommons/layout/defaultLayoutHome.jsp">
+		<put-attribute name="title" value="cmms" />
+		<put-attribute name="header" value="" />
+		<put-attribute name="footer"	value="" />
+		<put-attribute name="body"	value="/WEB-INF/com/iprosonic/cmms/modules/welcome/jsp/newWelcome.jsp" />
+	</definition>
+
+	<definition name="loginerror" extends="loginErrorLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/pjcommons/jsp/loginerror.jsp" />
+	</definition>
+
+	<definition name="usermst" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/masters/user/jsp/userMst.jsp" />
+	</definition>
+
+	<definition name="addclient" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/masters/client/jsp/clientMst.jsp" />
+	</definition>
+	<definition name="successClient" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/masters/client/jsp/successClient.jsp" />
+	</definition>
+
+	<!-- location master -->
+
+	<definition name="addlocation" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/masters/location/jsp/locationMst.jsp" />
+	</definition>
+
+	<definition name="searchusermst" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/masters/user/jsp/SearchUserMst.jsp" />
+	</definition>
+
+	<definition name="editusermst" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/masters/user/jsp/EditUserMst.jsp" />
+	</definition>
+
+
+	<definition name="saveSuccessuserMst" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/masters/user/jsp/saveSuccessuserMst.jsp" />
+	</definition>
+
+
+	<definition name="rolemst" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/masters/role/jsp/roleMst.jsp" />
+	</definition>
+
+
+	<definition name="cpi" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/cpi/transactions/jsp/createCpi.jsp" />
+	</definition>
+
+
+	<!-- <definition name="job" > <put-attribute name="body" value="/WEB-INF/com/iprosonic/cmms/modules/job/transactions/jsp/createJob.jsp" 
+		/> </definition> -->
+
+
+	<definition name="searchJob" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/job/transactions/jsp/searchJob.jsp" />
+	</definition>
+
+
+	<definition name="deshboardresult" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/welcome/jsp/newWelcome.jsp" />
+	</definition>
+
+	<definition name="editJob" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/job/transactions/jsp/editJob.jsp" />
+	</definition>
+
+
+
+
+	<definition name="crewDetail" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/pjcommons/jsp/CrewDetail.jsp" />
+	</definition>
+
+	<definition name="ServiceSuccess" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/job/jsp/PopUp/ServiceSuccess.jsp" />
+	</definition>
+
+	<!-- SHARVAN JOBS END -->
+
+	<definition name="SaveCPIAction" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/cpi/transactions/jsp/createCpi.jsp" />
+	</definition>
+
+	<definition name="successCpi" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/cpi/transactions/jsp/successCpi.jsp" />
+	</definition>
+
+	<definition name="InitSearchCPIActionSuccess" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/cpi/transactions/jsp/searchCpi.jsp" />
+	</definition>
+
+
+	<definition name="EditCpi" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/cpi/transactions/jsp/editCpi.jsp" />
+	</definition>
+
+	<definition name="UpdateCpiAction" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/cpi/transactions/jsp/updateCpiSuccess.jsp" />
+	</definition>
+
+	<definition name="InitMWasReportAction" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/reports/jsp/mwas.jsp" />
+	</definition>
+
+	<definition name="InitHistoryCardReportAction" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/reports/jsp/historycard.jsp" />
+	</definition>
+
+
+	<definition name="InitAssetAction" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/cpi/masters/asset/jsp/assetmaster.jsp" />
+	</definition>
+
+	<definition name="SaveAssetAction" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/cpi/masters/asset/jsp/successAsset.jsp" />
+	</definition>
+
+
+	<definition name="InitSearchAssetAction" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/cpi/masters/asset/jsp/searchAsset.jsp" />
+	</definition>
+
+	<definition name="EditAssetAction" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/cpi/masters/asset/jsp/editasset.jsp" />
+	</definition>
+
+
+	<definition name="UpdateAssetAction" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/cpi/masters/asset/jsp/updateAsset.jsp" />
+	</definition>
+
+	<definition name="InitPrintCpiAction" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/cpi/transactions/jsp/cpiform.jsp" />
+	</definition>
+
+
+	<!-- Clients -->
+	<definition name="clientmst" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/masters/client/jsp/clientMst.jsp" />
+	</definition>
+
+	<definition name="successClient" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/masters/client/jsp/successClient.jsp" />
+	</definition>
+
+
+	<!-- unit master -->
+	<definition name="wellmst" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/wellmaster/jsp/wellMst.jsp" />
+	</definition>
+
+
+
+	<definition name="searchunitmst" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/masters/unit/jsp/searchUnit.jsp" />
+	</definition>
+
+
+	<definition name="editunit" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/masters/unit/jsp/editunit.jsp" />
+	</definition>
+
+
+
+	<!-- Job_1 -->
+	<definition name="job" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/job/transactions/jsp/createJob.jsp" />
+	</definition>
+
+	<definition name="jobSuccess" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/job/transactions/jsp/successJob.jsp" />
+	</definition>
+
+	<definition name="deleteJobSuccess" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/job/transactions/jsp/successJob.jsp" />
+	</definition>
+
+	<definition name="searchJob" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/job/transactions/jsp/searchJob.jsp" />
+	</definition>
+
+
+	<!-- job report -->
+
+	<definition name="jobbonusreport" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/job/reports/jobbonusreport.jsp" />
+	</definition>
+
+	<definition name="operationreport" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/job/reports/operationReport.jsp" />
+	</definition>
+
+
+	<definition name="crewreport" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/job/reports/crewreport.jsp" />
+	</definition>
+
+	<definition name="operationreportengwise" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/job/reports/operationReportEngWise.jsp" />
+	</definition>
+
+	<definition name="operationreportcrewwise" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/job/reports/operationReportCrewWise.jsp" />
+	</definition>
+
+	<definition name="serviceExpReprot" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/job/reports/ServiceExpReport.jsp" />
+	</definition>
+
+	<!-- type master -->
+	<definition name="serviceMaster" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/job/masters/service/jsp/serviceMaster.jsp" />
+	</definition>
+
+
+	<definition name="searchServiceMaster" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/job/masters/service/jsp/searchServiceMaster.jsp" />
+	</definition>
+
+	<definition name="editServiceMaster" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/modules/job/masters/service/jsp/serviceMaster.jsp" />
+	</definition>
+
+	<!-- Dashboard -->
+	<definition name="dashboardMaster" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/com/iprosonic/cmms/pjcommons/jsp/dashboard.jsp" />
+	</definition>
+
+
+
+</tiles-definitions>
